@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Apps I made
+    'polls.apps.PollsConfig',
+    # Default Added apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,11 +75,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.0/ref/settings/#std-setting-DATABASES
 
+# can also use under DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # Will need these others if I want to use anything other than sqlite
+        #'USER': 'db_user',
+        #'PASSWORD': db_password_key, - In the secret_codes.py file
+        #'HOST': '127.0.0.1',
+        #'PORT': '8000',
     }
 }
 
